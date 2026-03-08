@@ -35,6 +35,7 @@ def preprocess_data(df):
     try:
         
         df = df.copy()
+        df['timestamp'] = pd.to_datetime(df['timestamp'])
         numeric_cols = df.select_dtypes(include=[np.number]).columns.drop('is_anomaly')
         df[numeric_cols] = df[numeric_cols].fillna(method='ffill').fillna(method='bfill')
         for col in numeric_cols:

@@ -74,7 +74,7 @@ def save_data(data: pd.DataFrame, data_path: str) -> None:
 def main():
     try:
         
-        data_path = 'https://raw.githubusercontent.com/Piyush-code-lab/Wind-Turbine-Anomaly-Detection/refs/heads/main/Dataset/turbine_5yr_complex_data.csv'
+        data_path = 'https://raw.githubusercontent.com/Piyush-code-lab/Wind-Turbine-Anomaly-Detection/refs/heads/main/Dataset/turbine_5yr_labeled_data.csv'
         df = load_data(data_url=data_path)
         save_data(df, data_path='./data')
     except Exception as e:
